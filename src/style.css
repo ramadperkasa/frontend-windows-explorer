@@ -1,0 +1,70 @@
+/*
+  ================================ External Fonts ================================
+*/
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/app/assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/app/assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+/**
+  ================================ TailwindCSS ================================
+*/
+@import 'tailwindcss';
+@import 'tailwindcss-primeui';
+
+/**
+  ================================ Custom TailwindCSS ================================
+*/
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-variation-settings: 'opsz' 14;
+  }
+}
+
+@layer components {
+  .basic-smooth-animation {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .button-shadow {
+    box-shadow: 0px 1px 2px 0px #1018280d;
+  }
+
+  .container {
+    @apply w-dvw h-dvh max-w-full md:max-w-4xl xl:max-w-6xl mx-auto px-4;
+  }
+
+  .default-wrapper {
+    @apply relative inset-0 z-0;
+  }
+
+  .default-wrapper-fullscreen {
+    @apply relative inset-0 z-0 w-dvw h-dvh overflow-x-hidden;
+  }
+
+  .grid-wrapper-fullscreen {
+    @apply grid grid-rows-1 grid-cols-12 relative inset-0 z-0 w-dvw h-dvh;
+  }
+}
+
+@theme {
+  --color-primary: #0177c7;
+  --color-accent-primary: #e7eaf7;
+  --color-text-gray: #6b7280;
+  --color-text-gray-light: #9ca3af;
+  --color-gray-20: #f2f2f2;
+  --font-sans: 'Inter', sans-serif;
+}
